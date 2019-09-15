@@ -1,5 +1,5 @@
 package observator;
 
 public interface IObserver<T> {
-    void update(T observable);
+    void update(Observable<T> observable);
 }
