@@ -10,13 +10,13 @@ public class Start {
 
     @EventListener(ApplicationReadyEvent.class)
     public  void runExample(){
-        Observable<WeatherStation> weatherStation = new WeatherStation();
+        Observable<WeatherStation> observable = new WeatherStation();
         IObserver<WeatherStation> printDisplay = new PrintDisplay();
         IObserver<WeatherStation> prettyPrintDisplay = new PrettyPrintDisplay();
-        weatherStation.add(printDisplay);
-        weatherStation.add(prettyPrintDisplay);
-        weatherStation.notifyObservers();
-        weatherStation.getObservable().setTemperature(14);
+        observable.add(printDisplay);
+        observable.add(prettyPrintDisplay);
+        observable.notifyObservers();
+        observable.getObservable().setTemperature(14);
 
     }
 }

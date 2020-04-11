@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public abstract class Observable<T> {
+    T observable;
 
     private Set<IObserver<T>> observers = new HashSet<>();
 
@@ -16,9 +17,11 @@ public abstract class Observable<T> {
     }
 
     public void notifyObservers() {
-        observers.forEach(observer -> observer.update(this));
+        observers.forEach(observer -> observer.update(observable));
     }
 
-    public abstract T getObservable();
+    public T getObservable() {
+        return observable;
+    }
 
 }

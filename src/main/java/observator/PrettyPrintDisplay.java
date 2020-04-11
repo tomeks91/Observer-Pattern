@@ -8,7 +8,7 @@ public class PrettyPrintDisplay implements IObserver<WeatherStation>, IDisplay{
     }
 
     @Override
-    public void update(Observable<WeatherStation> observable) {
-        display(observable.getObservable());
+    public void update(WeatherStation observable) {
+        display(observable);
     }
 }
